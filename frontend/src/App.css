@@ -1,0 +1,455 @@
+.site-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-navbar {
+  background: rgba(255, 250, 243, 0.84);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(96, 74, 58, 0.1);
+}
+
+.brand-mark {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1f160f;
+  text-decoration: none;
+}
+
+.nav-button {
+  border: 0;
+  background: transparent;
+  color: #5f554e;
+  font-weight: 600;
+  padding: 0.55rem 0.95rem !important;
+  border-radius: 999px;
+}
+
+.nav-button:hover,
+.nav-button.active {
+  color: #1f160f;
+  background: rgba(104, 55, 25, 0.08);
+}
+
+.app-shell {
+  flex: 1;
+  background:
+    radial-gradient(circle at top left, rgba(199, 84, 32, 0.18), transparent 32%),
+    radial-gradient(circle at top right, rgba(21, 101, 192, 0.18), transparent 28%),
+    linear-gradient(180deg, #fffaf3 0%, #f5f0e8 100%);
+}
+
+.section-card {
+  margin-bottom: 3rem;
+}
+
+.home-hero {
+  background:
+    radial-gradient(circle at top left, rgba(255, 203, 120, 0.2), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(107, 180, 255, 0.18), transparent 30%),
+    linear-gradient(135deg, rgba(88, 47, 23, 0.98), rgba(18, 55, 94, 0.97) 58%, rgba(12, 36, 63, 0.98));
+  color: #fff;
+  border-radius: 2rem;
+  box-shadow: 0 2rem 4.5rem rgba(35, 24, 18, 0.22);
+  position: relative;
+  overflow: hidden;
+  animation: heroFadeUp 0.7s ease;
+}
+
+.home-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(120deg, rgba(255, 255, 255, 0.06), transparent 30%),
+    linear-gradient(300deg, rgba(255, 255, 255, 0.04), transparent 35%);
+  pointer-events: none;
+}
+
+.home-hero::after {
+  content: '';
+  position: absolute;
+  inset: auto -4rem -5rem auto;
+  width: 16rem;
+  height: 16rem;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.18), transparent 70%);
+}
+
+.hero-badge {
+  box-shadow: 0 0.6rem 1.4rem rgba(255, 255, 255, 0.12);
+}
+
+.home-title {
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  max-width: 11ch;
+}
+
+.home-copy {
+  max-width: 42rem;
+  font-size: 1.14rem;
+}
+
+.hero-actions {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-btn {
+  min-width: 190px;
+  font-weight: 700;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.hero-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 1rem 2rem rgba(15, 22, 34, 0.18);
+}
+
+.hero-btn-primary:hover {
+  background: #fffaf0;
+}
+
+.hero-info-card {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 1.5rem;
+  backdrop-filter: blur(10px);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.hero-info-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 1.4rem 2.8rem rgba(10, 18, 31, 0.16);
+}
+
+.hero-feature + .hero-feature {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.hero-feature-label {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 244, 222, 0.9);
+  margin-bottom: 0.45rem;
+}
+
+.hero-feature p {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-hero {
+  background: linear-gradient(135deg, rgba(125, 67, 31, 0.96), rgba(28, 71, 119, 0.94));
+  color: #fff;
+  border-radius: 1.75rem;
+  box-shadow: 0 1.5rem 3rem rgba(35, 24, 18, 0.16);
+}
+
+.page-hero .badge {
+  letter-spacing: 0.08em;
+}
+
+.auth-card {
+  border-radius: 1.75rem;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.auth-action {
+  min-width: 120px;
+}
+
+.auth-link-button {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: #1f4f81;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.auth-link-button:hover {
+  color: #14375e;
+  text-decoration: underline;
+}
+
+.booking-panel {
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 1.1rem 2.6rem rgba(54, 41, 34, 0.08);
+}
+
+.info-card {
+  border-radius: 1.35rem;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 1rem 2.2rem rgba(54, 41, 34, 0.07);
+}
+
+.article-card {
+  border-radius: 1.45rem;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 1rem 2.4rem rgba(54, 41, 34, 0.08);
+}
+
+.article-card:hover {
+  transform: translateY(-4px);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  box-shadow: 0 1.3rem 2.8rem rgba(54, 41, 34, 0.14);
+}
+
+.article-detail-card {
+  border-radius: 1.6rem;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 1.2rem 2.8rem rgba(54, 41, 34, 0.09);
+}
+
+.article-content {
+  white-space: pre-line;
+  line-height: 1.9;
+  font-size: 1.05rem;
+  color: #4e4742;
+}
+
+.dashboard-profile-card,
+.dashboard-booking-card {
+  border-radius: 1.6rem;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 1rem 2.5rem rgba(54, 41, 34, 0.08);
+}
+
+.dashboard-avatar {
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #fff;
+  background: linear-gradient(135deg, #7d431f, #1c4777);
+  box-shadow: 0 1rem 2rem rgba(28, 71, 119, 0.18);
+}
+
+.dashboard-role-badge {
+  background: #eef4fb;
+  color: #1f4f81;
+  font-weight: 700;
+}
+
+.dashboard-lawyer-photo {
+  width: 92px;
+  height: 92px;
+  border-radius: 1.25rem;
+  object-fit: cover;
+  box-shadow: inset 0 0 0 1px rgba(125, 67, 31, 0.08);
+}
+
+.dashboard-bookings-section {
+  padding-top: 0.5rem;
+}
+
+.case-card {
+  border-radius: 1.55rem;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 1rem 2.4rem rgba(54, 41, 34, 0.08);
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.timeline-marker {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.timeline-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #7d431f, #1c4777);
+  box-shadow: 0 0 0 6px rgba(28, 71, 119, 0.08);
+  margin-top: 0.2rem;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 1.15rem;
+  width: 2px;
+  height: calc(100% + 1.1rem);
+  background: linear-gradient(180deg, rgba(28, 71, 119, 0.32), rgba(125, 67, 31, 0.12));
+}
+
+.timeline-content {
+  padding-bottom: 0.4rem;
+}
+
+.info-card-tag {
+  display: inline-flex;
+  align-items: center;
+  background: #f3ece4;
+  color: #6b4a36;
+  border-radius: 999px;
+  padding: 0.35rem 0.8rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.lawyer-card {
+  border: 0;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 1rem 2.8rem rgba(54, 41, 34, 0.1);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.lawyer-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 1.25rem 2.75rem rgba(54, 41, 34, 0.16);
+}
+
+.selected-lawyer-card {
+  outline: 3px solid rgba(28, 71, 119, 0.2);
+}
+
+.lawyer-card-image {
+  height: 220px;
+  object-fit: cover;
+  box-shadow: inset 0 0 0 1px rgba(125, 67, 31, 0.08);
+}
+
+.info-pill {
+  background: #f3ece4;
+  color: #6b4a36;
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.language-chip {
+  background: #eef4fb;
+  color: #1f4f81;
+  border-radius: 999px;
+  padding: 0.3rem 0.65rem;
+  font-size: 0.8rem;
+}
+
+.empty-state,
+.status-card {
+  border-radius: 1.25rem;
+  box-shadow: 0 1rem 2.2rem rgba(54, 41, 34, 0.08);
+}
+
+.lawyers-section {
+  padding-top: 0.5rem;
+}
+
+.search-panel {
+  width: 100%;
+  max-width: 420px;
+}
+
+.search-label {
+  letter-spacing: 0.08em;
+  color: #6b4a36;
+  margin-bottom: 0.6rem;
+}
+
+.search-input {
+  border-radius: 1rem;
+  border: 1px solid rgba(96, 74, 58, 0.12);
+  box-shadow: 0 0.65rem 1.5rem rgba(54, 41, 34, 0.06);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.search-input:focus {
+  border-color: rgba(28, 71, 119, 0.35);
+  box-shadow: 0 0 0 0.2rem rgba(28, 71, 119, 0.12);
+}
+
+.slot-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  min-height: 3rem;
+}
+
+.slot-button {
+  border-radius: 999px;
+  padding: 0.7rem 1rem;
+  font-weight: 600;
+}
+
+.slot-button-active {
+  background: linear-gradient(135deg, #7d431f, #1c4777);
+  color: #fff;
+  border: 1px solid transparent;
+  box-shadow: 0 0.9rem 1.8rem rgba(28, 71, 119, 0.16);
+}
+
+.app-footer {
+  background: linear-gradient(180deg, #1f160f 0%, #2b221c 100%);
+  color: rgba(255, 245, 236, 0.88);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-title {
+  color: #fff;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+}
+
+.footer-copy,
+.footer-link {
+  color: rgba(255, 245, 236, 0.72);
+  margin-bottom: 0.55rem;
+}
+
+.footer-link {
+  font-weight: 600;
+}
