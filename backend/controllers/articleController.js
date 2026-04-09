@@ -70,29 +70,34 @@ const defaultArticles = [
 ];
 
 const ensureArticlesSeeded = async () => {
-  const existingArticles = await Article.countDocuments();
-
-  if (existingArticles === 0) {
-    await Article.insertMany(defaultArticles);
+  try {
+    const count = await Article.countDocuments();
+    if (count === 0) {
+      await Article.insertMany(defaultArticles);
+      console.log("Articles seeded");
+    }
+  } catch (error) {
+    console.error("Seeding Error:", error);
   }
 };
 
+// ✅ GET ALL ARTICLES
 export const getArticles = async (req, res) => {
   try {
     await ensureArticlesSeeded();
+
     const articles = await Article.find().sort({ createdAt: -1 });
+
     res.status(200).json(articles);
   } catch (error) {
-    res.status(500).json({
-      message: "Failed to fetch articles",
-      error: error.message,
-    });
+    console.error("Articles Error:", error);
+    res.status(500).json({ message: "Failed to fetch articles" });
   }
 };
 
+// ✅ GET SINGLE ARTICLE
 export const getArticleById = async (req, res) => {
   try {
-    await ensureArticlesSeeded();
     const article = await Article.findById(req.params.id);
 
     if (!article) {
@@ -101,9 +106,7 @@ export const getArticleById = async (req, res) => {
 
     res.status(200).json(article);
   } catch (error) {
-    res.status(500).json({
-      message: "Failed to fetch article",
-      error: error.message,
-    });
+    console.error("Article Error:", error);
+    res.status(500).json({ message: "Failed to fetch article" });
   }
 };

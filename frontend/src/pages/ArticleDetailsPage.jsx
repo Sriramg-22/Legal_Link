@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+const API = import.meta.env.VITE_API_URL;
 
 function ArticleDetailsPage({ articleId, onBackToResources }) {
   const [article, setArticle] = useState(null)
@@ -9,7 +10,7 @@ function ArticleDetailsPage({ articleId, onBackToResources }) {
   useEffect(() => {
     const fetchArticle = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/articles/${articleId}`)
+        const response = await axios.get(`${API}api/articles/${articleId}`)
         setArticle(response.data)
       } catch (err) {
         setError('Unable to load this article right now.')

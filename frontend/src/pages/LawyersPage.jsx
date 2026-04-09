@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import LawyerCard from '../components/LawyerCard'
-
+const API = import.meta.env.VITE_API_URL;
 function LawyersPage() {
   const [lawyers, setLawyers] = useState([])
   const [loading, setLoading] = useState(true)
@@ -31,7 +31,7 @@ function LawyersPage() {
   useEffect(() => {
     const fetchLawyers = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/lawyers')
+        const response = await axios.get(`${API}/api/lawyers`)
         setLawyers(response.data)
       } catch (err) {
         setError('Unable to load lawyers. Please make sure the backend is running.')

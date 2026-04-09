@@ -24,7 +24,7 @@ const articleSchema = new mongoose.Schema(
     },
   },
   {
-    timestamps: true,
+    timestamps: true, // ✅ important for sorting
   }
 );
 

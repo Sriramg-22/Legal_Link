@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-
+const API = import.meta.env.VITE_API_URL;
 const statusBadgeClass = {
   Pending: 'text-bg-warning',
   Confirmed: 'text-bg-success',
@@ -29,7 +29,7 @@ function DashboardPage() {
       }
 
       try {
-        const response = await axios.get(`http://localhost:5000/api/bookings/${parsedUser.id}`)
+        const response = await axios.get(`${API}/api/bookings/${parsedUser.id}`)
         setBookings(response.data)
       } catch (err) {
         setError('Unable to load your bookings right now.')

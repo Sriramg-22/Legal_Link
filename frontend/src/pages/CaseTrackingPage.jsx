@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-
+const API = import.meta.env.VITE_API_URL;
 function CaseTrackingPage() {
   const [cases, setCases] = useState([])
   const [loading, setLoading] = useState(true)
@@ -19,7 +19,7 @@ function CaseTrackingPage() {
       }
 
       try {
-        const response = await axios.get(`http://localhost:5000/api/cases/${userId}`)
+        const response = await axios.get(`${API}/api/cases/${userId}`)
         setCases(response.data)
       } catch (err) {
         setError('Unable to load case tracking details right now.')

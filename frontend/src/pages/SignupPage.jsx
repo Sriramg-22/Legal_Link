@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import axios from 'axios'
-
+const API = import.meta.env.VITE_API_URL;
 function SignupPage({ onSignupSuccess, onNavigateToLogin }) {
   const [formData, setFormData] = useState({
     name: '',
@@ -33,7 +33,7 @@ function SignupPage({ onSignupSuccess, onNavigateToLogin }) {
     setLoading(true)
 
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/signup', formData)
+      const response = await axios.post(`${API}/api/auth/signup`, formData)
       setSuccess(response.data.message || 'Signup successful')
       onSignupSuccess('Signup successful. Please log in with your new account.')
     } catch (err) {
