@@ -50,7 +50,7 @@ function LawyersPage() {
     setBookingLoading(true)
 
     try {
-      const response = await axios.post('http://localhost:5000/api/bookings', {
+      const response = await axios.post(`${API}/api/bookings`, {
         userId: currentUser?.id,
         lawyer: selectedLawyer,
         date: bookingDate,
